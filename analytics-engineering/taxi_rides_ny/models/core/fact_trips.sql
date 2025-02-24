@@ -22,6 +22,9 @@ trips_unioned as (
 dim_zones as (
     select * from {{ ref('dim_zones') }}
     where borough != 'Unknown'
+),
+dim_dates as (
+    select * from {{ ref('dim_taxi_dates')}}
 )
 select trips_unioned.tripid, 
     trips_unioned.vendorid, 
