@@ -1,4 +1,3 @@
-
 {{ config(
     materialized='table'
 ) }}
@@ -17,45 +16,40 @@ WITH quarterly_rev AS (
 yoy_growth AS (
     -- Compute YoY revenue growth
     SELECT 
-        service_type, 
-        year, 
-        quarter, 
-        quarterly_revenue, 
-        LAG(quarterly_revenue) OVER (
-            PARTITION BY service_type, quarter ORDER BY year ASC
-        ) AS prev_year_revenue,
+        q1.service_type, 
+        q1.year, 
+        q1.quarter, 
+        q1.quarterly_revenue, 
+        q2.quarterly_revenue AS prev_year_revenue,
         -- Calculate YoY growth percentage
         ROUND(
-            SAFE_DIVIDE(
-                quarterly_revenue - LAG(quarterly_revenue) OVER (
-                    PARTITION BY service_type, quarter ORDER BY year ASC
-                ), 
-                LAG(quarterly_revenue) OVER (
-                    PARTITION BY service_type, quarter ORDER BY year ASC
-                )
-            ) * 100, 2
+            SAFE_DIVIDE(q1.quarterly_revenue - q2.quarterly_revenue, q2.quarterly_revenue) * 100, 2
         ) AS yoy_growth
-    FROM quarterly_rev
+    FROM quarterly_rev q1
+    LEFT JOIN quarterly_rev q2 
+    ON q1.service_type = q2.service_type 
+    AND q1.quarter = q2.quarter 
+    AND q1.year = q2.year + 1
 ),
 
-ranked_growth AS (
-    -- Rank best & worst quarters for 2020
+best_worst AS (
+    -- Identify best & worst quarters for 2020
     SELECT 
-        service_type, 
-        year, 
-        quarter, 
+        service_type,
+        CONCAT(CAST(year AS STRING), '/Q', CAST(quarter AS STRING)) AS quarter_label,
         yoy_growth,
-        RANK() OVER (PARTITION BY service_type ORDER BY yoy_growth DESC) AS best_rank,
-        RANK() OVER (PARTITION BY service_type ORDER BY yoy_growth ASC) AS worst_rank
-    FROM yoy_growth
+        -- Find the best and worst quarters per service_type
+        CASE 
+            WHEN yoy_growth = (SELECT MAX(yoy_growth) FROM yoy_growth y WHERE y.service_type = g.service_type AND y.year = 2020) 
+            THEN 'best' 
+        END AS best_quarter,
+        CASE 
+            WHEN yoy_growth = (SELECT MIN(yoy_growth) FROM yoy_growth y WHERE y.service_type = g.service_type AND y.year = 2020) 
+            THEN 'worst' 
+        END AS worst_quarter
+    FROM yoy_growth g
     WHERE year = 2020
 )
 
-SELECT 
-    service_type,
-    CONCAT(CAST(year AS STRING), '/Q', CAST(quarter AS STRING)) AS quarter_label,
-    yoy_growth,
-    CASE WHEN best_rank = 1 THEN 'best' END AS best_quarter,
-    CASE WHEN worst_rank = 1 THEN 'worst' END AS worst_quarter
-FROM ranked_growth
-WHERE best_rank = 1 OR worst_rank = 1
+SELECT * FROM best_worst
+WHERE best_quarter IS NOT NULL OR worst_quarter IS NOT NULL
