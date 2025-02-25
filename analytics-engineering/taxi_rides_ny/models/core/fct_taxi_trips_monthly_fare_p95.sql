@@ -11,10 +11,10 @@ WITH valid_trips AS (
     FROM {{ ref("fact_trips") }}
     WHERE fare_amount > 0 
       AND trip_distance > 0 
-      AND payment_type_description IN ('Cash', 'Credit Card')
+      AND lower(payment_type_description) in ('cash', 'credit card')
 )
 
-SELECT 
+SELECT DISTINCT
     service_type,
     year,
     month,
@@ -22,7 +22,7 @@ SELECT
     PERCENTILE_CONT(fare_amount, 0.95) OVER (PARTITION BY service_type, year, month) AS p95,
     PERCENTILE_CONT(fare_amount, 0.90) OVER (PARTITION BY service_type, year, month) AS p90
 FROM valid_trips
-GROUP BY service_type, year, month, fare_amount
 ORDER BY service_type, year, month
+
 
 
