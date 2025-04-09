@@ -1,0 +1,115 @@
+[2025-04-06T01:56:29.961+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-06T01:56:29.969+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: la_traffic_download_to_bq_via_url.load_csv_to_bigquery manual__2025-04-06T01:50:32.576025+00:00 [queued]>
+[2025-04-06T01:56:29.972+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: la_traffic_download_to_bq_via_url.load_csv_to_bigquery manual__2025-04-06T01:50:32.576025+00:00 [queued]>
+[2025-04-06T01:56:29.972+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-06T01:56:29.978+0000] {taskinstance.py:2890} INFO - Executing <Task(GCSToBigQueryOperator): load_csv_to_bigquery> on 2025-04-06 01:50:32.576025+00:00
+[2025-04-06T01:56:29.982+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=468) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-06T01:56:29.983+0000] {standard_task_runner.py:72} INFO - Started process 469 to run task
+[2025-04-06T01:56:29.983+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'la_traffic_download_to_bq_via_url', 'load_csv_to_bigquery', 'manual__2025-04-06T01:50:32.576025+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpi7s2upn3']
+[2025-04-06T01:56:29.984+0000] {standard_task_runner.py:105} INFO - Job 21: Subtask load_csv_to_bigquery
+[2025-04-06T01:56:30.005+0000] {task_command.py:467} INFO - Running <TaskInstance: la_traffic_download_to_bq_via_url.load_csv_to_bigquery manual__2025-04-06T01:50:32.576025+00:00 [running]> on host 78a2e318ec3f
+[2025-04-06T01:56:30.048+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='la_traffic_download_to_bq_via_url' AIRFLOW_CTX_TASK_ID='load_csv_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T01:50:32.576025+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-06T01:50:32.576025+00:00'
+[2025-04-06T01:56:30.049+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-06T01:56:30.049+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-06T01:56:30.049+0000] {logging_mixin.py:190} INFO - Current task name:load_csv_to_bigquery state:running start_date:2025-04-06 01:56:29.969438+00:00
+[2025-04-06T01:56:30.050+0000] {logging_mixin.py:190} INFO - Dag name:la_traffic_download_to_bq_via_url and current dag run status:running
+[2025-04-06T01:56:30.050+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-06T01:56:30.058+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 328, in execute
+    hook = BigQueryHook(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 160, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/common/hooks/base_google.py", line 283, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/hooks/base.py", line 83, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/connection.py", line 537, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2025-04-06T01:56:30.062+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-04-06T01:56:30.063+0000] {logging_mixin.py:190} INFO - Task start:2025-04-06 01:56:29.969438+00:00 end:2025-04-06 01:56:30.062583+00:00 duration:0.093145
+[2025-04-06T01:56:30.063+0000] {logging_mixin.py:190} INFO - Task:<Task(GCSToBigQueryOperator): load_csv_to_bigquery> dag:<DAG: la_traffic_download_to_bq_via_url> dagrun:<DagRun la_traffic_download_to_bq_via_url @ 2025-04-06 01:50:32.576025+00:00: manual__2025-04-06T01:50:32.576025+00:00, state:running, queued_at: 2025-04-06 01:50:32.585466+00:00. externally triggered: True>
+[2025-04-06T01:56:30.063+0000] {logging_mixin.py:190} INFO - Failure caused by The conn_id `google_cloud_default` isn't defined
+[2025-04-06T01:56:30.063+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=la_traffic_download_to_bq_via_url, task_id=load_csv_to_bigquery, run_id=manual__2025-04-06T01:50:32.576025+00:00, execution_date=20250406T015032, start_date=20250406T015629, end_date=20250406T015630
+[2025-04-06T01:56:30.075+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-06T01:56:30.075+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 21 for task load_csv_to_bigquery (The conn_id `google_cloud_default` isn't defined; 469)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 328, in execute
+    hook = BigQueryHook(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 160, in __init__
+    super().__init__(**kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/common/hooks/base_google.py", line 283, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/hooks/base.py", line 83, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/connection.py", line 537, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2025-04-06T01:56:30.084+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-06T01:56:30.094+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-06T01:56:30.095+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

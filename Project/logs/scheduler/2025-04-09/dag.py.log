@@ -1,0 +1,154 @@
+[2025-04-09T22:43:55.309+0000] {processor.py:186} INFO - Started process (PID=49) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:43:55.310+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:43:55.313+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:43:55.312+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:43:55.440+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:43:55.457+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:43:55.457+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:43:55.634+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:43:55.634+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:43:55.643+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.338 seconds
+[2025-04-09T22:44:26.662+0000] {processor.py:186} INFO - Started process (PID=117) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:44:26.663+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:44:26.667+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:44:26.666+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:44:26.784+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:44:26.795+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:44:26.795+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:44:26.807+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:44:26.806+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:44:26.814+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.162 seconds
+[2025-04-09T22:44:56.930+0000] {processor.py:186} INFO - Started process (PID=183) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:44:56.931+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:44:56.933+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:44:56.932+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:44:57.028+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:44:57.039+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:44:57.038+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:44:57.048+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:44:57.048+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:44:57.054+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.128 seconds
+[2025-04-09T22:45:27.865+0000] {processor.py:186} INFO - Started process (PID=245) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:45:27.867+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:45:27.871+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:45:27.870+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:45:27.990+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:45:28.003+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:45:28.002+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:45:28.013+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:45:28.012+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:45:28.020+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.164 seconds
+[2025-04-09T22:45:58.115+0000] {processor.py:186} INFO - Started process (PID=310) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:45:58.116+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:45:58.118+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:45:58.118+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:45:58.243+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:45:58.257+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:45:58.256+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:45:58.268+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:45:58.267+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:45:58.281+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.180 seconds
+[2025-04-09T22:46:28.406+0000] {processor.py:186} INFO - Started process (PID=373) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:46:28.408+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:46:28.412+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:46:28.411+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:46:28.542+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:46:28.554+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:46:28.554+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:46:28.564+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:46:28.564+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:46:28.573+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.187 seconds
+[2025-04-09T22:46:58.716+0000] {processor.py:186} INFO - Started process (PID=436) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:46:58.717+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:46:58.721+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:46:58.721+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:46:58.830+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:46:58.839+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:46:58.839+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:46:58.850+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:46:58.849+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:46:58.857+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.150 seconds
+[2025-04-09T22:47:29.088+0000] {processor.py:186} INFO - Started process (PID=500) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:47:29.090+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:47:29.096+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:47:29.096+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:47:29.209+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:47:29.223+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:47:29.223+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:47:29.238+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:47:29.238+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:47:29.247+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.172 seconds
+[2025-04-09T22:47:59.536+0000] {processor.py:186} INFO - Started process (PID=570) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:47:59.541+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:47:59.544+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:47:59.544+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:47:59.671+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:47:59.689+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:47:59.689+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:47:59.706+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:47:59.706+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:47:59.719+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.195 seconds
+[2025-04-09T22:48:30.066+0000] {processor.py:186} INFO - Started process (PID=634) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:48:30.071+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:48:30.078+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:48:30.078+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:48:30.218+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:48:30.240+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:48:30.239+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:48:30.255+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:48:30.255+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:48:30.265+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.222 seconds
+[2025-04-09T22:49:00.357+0000] {processor.py:186} INFO - Started process (PID=698) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:49:00.357+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:49:00.361+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:49:00.361+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:49:00.464+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:49:00.475+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:49:00.475+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:49:00.486+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:49:00.486+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:49:00.493+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.146 seconds
+[2025-04-09T22:49:30.558+0000] {processor.py:186} INFO - Started process (PID=763) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:49:30.558+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:49:30.560+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:49:30.560+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:49:30.646+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:49:30.657+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:49:30.657+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:49:30.668+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:49:30.668+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:49:30.677+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.123 seconds
+[2025-04-09T22:50:00.765+0000] {processor.py:186} INFO - Started process (PID=826) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:50:00.768+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:50:00.771+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:50:00.770+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:50:00.874+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:50:00.891+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:50:00.891+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:50:00.902+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:50:00.902+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:50:00.909+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.154 seconds
+[2025-04-09T22:50:30.969+0000] {processor.py:186} INFO - Started process (PID=890) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:50:30.970+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:50:30.973+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:50:30.973+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:50:31.074+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:50:31.085+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:50:31.085+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:50:31.099+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:50:31.099+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:50:31.108+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.147 seconds
+[2025-04-09T22:51:02.038+0000] {processor.py:186} INFO - Started process (PID=954) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:51:02.038+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:51:02.041+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:51:02.040+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:51:02.133+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:51:02.144+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:51:02.144+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:51:02.157+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:51:02.156+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:51:02.164+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.131 seconds
+[2025-04-09T22:51:32.240+0000] {processor.py:186} INFO - Started process (PID=1018) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:51:32.241+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:51:32.244+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:51:32.243+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:51:32.354+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:51:32.364+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:51:32.363+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:51:32.374+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:51:32.374+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:51:32.383+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.150 seconds
+[2025-04-09T22:52:02.478+0000] {processor.py:186} INFO - Started process (PID=1084) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:52:02.478+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:52:02.479+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:52:02.479+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:52:02.563+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:52:02.573+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:52:02.573+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:52:02.583+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:52:02.583+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:52:02.590+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.116 seconds
+[2025-04-09T22:52:32.697+0000] {processor.py:186} INFO - Started process (PID=1148) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:52:32.698+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:52:32.699+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:52:32.699+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:52:32.792+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:52:32.802+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:52:32.802+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:52:32.812+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:52:32.812+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:52:32.819+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.126 seconds
+[2025-04-09T22:53:02.866+0000] {processor.py:186} INFO - Started process (PID=1210) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:53:02.870+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:53:02.873+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:53:02.872+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:53:02.969+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:53:02.977+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:53:02.977+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:53:02.987+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:53:02.987+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:53:02.994+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.134 seconds
+[2025-04-09T22:53:33.852+0000] {processor.py:186} INFO - Started process (PID=1274) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:53:33.853+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:53:33.855+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:53:33.855+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:53:33.950+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:53:33.959+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:53:33.959+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:53:33.969+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:53:33.969+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:53:33.976+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.132 seconds
+[2025-04-09T22:54:04.913+0000] {processor.py:186} INFO - Started process (PID=1338) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:54:04.914+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:54:04.919+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:54:04.918+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:54:05.021+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:54:05.035+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:54:05.034+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:54:05.045+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:54:05.045+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:54:05.053+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.148 seconds
+[2025-04-09T22:54:35.515+0000] {processor.py:186} INFO - Started process (PID=1402) to work on /opt/airflow/dags/dag.py
+[2025-04-09T22:54:35.517+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2025-04-09T22:54:35.522+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:54:35.521+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2025-04-09T22:54:35.631+0000] {processor.py:925} INFO - DAG(s) 'la_traffic_download_to_bq_via_url' retrieved from /opt/airflow/dags/dag.py
+[2025-04-09T22:54:35.644+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:54:35.643+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-09T22:54:35.657+0000] {logging_mixin.py:190} INFO - [2025-04-09T22:54:35.657+0000] {dag.py:4180} INFO - Setting next_dagrun for la_traffic_download_to_bq_via_url to 2025-04-09 00:00:00+00:00, run_after=2025-04-10 00:00:00+00:00
+[2025-04-09T22:54:35.665+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.159 seconds
