@@ -1,0 +1,35 @@
+[2025-04-06T03:40:06.965+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-06T03:40:06.973+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: la_traffic_download_to_bq_via_url.load_csv_to_bigquery manual__2025-04-06T03:39:13.120908+00:00 [queued]>
+[2025-04-06T03:40:06.976+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: la_traffic_download_to_bq_via_url.load_csv_to_bigquery manual__2025-04-06T03:39:13.120908+00:00 [queued]>
+[2025-04-06T03:40:06.976+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-06T03:40:06.982+0000] {taskinstance.py:2890} INFO - Executing <Task(GCSToBigQueryOperator): load_csv_to_bigquery> on 2025-04-06 03:39:13.120908+00:00
+[2025-04-06T03:40:06.987+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=391) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-06T03:40:06.988+0000] {standard_task_runner.py:72} INFO - Started process 392 to run task
+[2025-04-06T03:40:06.988+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'la_traffic_download_to_bq_via_url', 'load_csv_to_bigquery', 'manual__2025-04-06T03:39:13.120908+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpyawos69g']
+[2025-04-06T03:40:06.988+0000] {standard_task_runner.py:105} INFO - Job 40: Subtask load_csv_to_bigquery
+[2025-04-06T03:40:07.010+0000] {task_command.py:467} INFO - Running <TaskInstance: la_traffic_download_to_bq_via_url.load_csv_to_bigquery manual__2025-04-06T03:39:13.120908+00:00 [running]> on host 43216fd05265
+[2025-04-06T03:40:07.039+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='la_traffic_download_to_bq_via_url' AIRFLOW_CTX_TASK_ID='load_csv_to_bigquery' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T03:39:13.120908+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-06T03:39:13.120908+00:00'
+[2025-04-06T03:40:07.040+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-06T03:40:07.040+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-06T03:40:07.040+0000] {logging_mixin.py:190} INFO - Current task name:load_csv_to_bigquery state:running start_date:2025-04-06 03:40:06.973344+00:00
+[2025-04-06T03:40:07.040+0000] {logging_mixin.py:190} INFO - Dag name:la_traffic_download_to_bq_via_url and current dag run status:running
+[2025-04-06T03:40:07.040+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-06T03:40:07.041+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-04-06T03:40:07.041+0000] {connection.py:277} WARNING - Connection schemes (type: google_cloud) shall not contain '_' according to RFC3986.
+[2025-04-06T03:40:07.041+0000] {base.py:84} INFO - Retrieving connection 'google_cloud_default'
+[2025-04-06T03:40:07.042+0000] {gcs_to_bigquery.py:389} INFO - Using existing BigQuery table for storing data...
+[2025-04-06T03:40:07.042+0000] {credentials_provider.py:402} INFO - Getting connection using `google.auth.default()` since no explicit credentials are provided.
+[2025-04-06T03:40:07.076+0000] {bigquery.py:1315} INFO - Project is not included in destination_project_dataset_table: la_traffic_collision.traffic_collisions; using project "taxi-rides-ny-450705"
+[2025-04-06T03:40:07.077+0000] {gcs_to_bigquery.py:393} INFO - Executing: {'load': {'autodetect': True, 'createDisposition': 'CREATE_IF_NEEDED', 'destinationTable': {'projectId': 'taxi-rides-ny-450705', 'datasetId': 'la_traffic_collision', 'tableId': 'traffic_collisions'}, 'sourceFormat': 'CSV', 'sourceUris': ['gs://la-traffic-collision/traffic-collision-data-from-2010-to-present.csv'], 'writeDisposition': 'WRITE_TRUNCATE', 'ignoreUnknownValues': False, 'skipLeadingRows': 1, 'fieldDelimiter': ',', 'quote': None, 'allowQuotedNewlines': False, 'encoding': 'UTF-8'}}
+[2025-04-06T03:40:07.077+0000] {bigquery.py:1241} INFO - Inserting job ***_la_traffic_download_to_bq_via_url_load_csv_to_bigquery_2025_04_06T03_39_13_120908_00_00_0b10163bc58c6eaa51315426bbb1fc98
+[2025-04-06T03:40:19.998+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-06T03:40:19.999+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=la_traffic_download_to_bq_via_url, task_id=load_csv_to_bigquery, run_id=manual__2025-04-06T03:39:13.120908+00:00, execution_date=20250406T033913, start_date=20250406T034006, end_date=20250406T034019
+[2025-04-06T03:40:20.018+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-04-06T03:40:20.019+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-04-06T03:40:20.019+0000] {logging_mixin.py:190} INFO - Dag name:la_traffic_download_to_bq_via_url queued_at:2025-04-06 03:39:13.139025+00:00
+[2025-04-06T03:40:20.019+0000] {logging_mixin.py:190} INFO - Task hostname:43216fd05265 operator:GCSToBigQueryOperator
+[2025-04-06T03:40:20.058+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-06T03:40:20.070+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-06T03:40:20.071+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
