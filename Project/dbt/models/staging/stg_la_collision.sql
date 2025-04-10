@@ -8,20 +8,26 @@
 with traffic_collisions as 
 (
   select *,
-    row_number() over(partition by area_id, date_occurred) as rn
+    row_number() over(partition by dr_number, date_occurred) as rn
   from {{ source('staging', 'traffic_collisions') }}
-  where area_id is not null
+  where dr_number is not null
 )
 select
     -- identifiers
-    {{ dbt_utils.generate_surrogate_key(['area_id', 'date_occurred']) }} as collision_id,
-    {{ dbt.safe_cast("area_id", api.Column.translate_type("integer")) }} as area_id,
-    {{ dbt.safe_cast("reporting_district", api.Column.translate_type("integer")) }} as reporting_district,
-    {{ dbt.safe_cast("crime_code", api.Column.translate_type("integer")) }} as crime_code,
-    
-    -- timestamps
+    {{ dbt_utils.generate_surrogate_key(['dr_number', 'date_occurred']) }} as collision_id,
+
+     -- timestamps
     cast(date_reported as timestamp) as date_reported,
     cast(date_occurred as timestamp) as date_occurred,
+    cast(time_occurred as timestamp) as time_occurred,
+
+    {{ dbt.safe_cast("area_id", api.Column.translate_type("integer")) }} as area_id,
+    area_name,
+    {{ dbt.safe_cast("reporting_district", api.Column.translate_type("integer")) }} as reporting_district,
+    crime_code,
+    {{ dbt.safe_cast("crime_code", api.Column.translate_type("integer")) }} as crime_code,
+    mo_codes,
+
     
     -- victim info
     victim_age,
