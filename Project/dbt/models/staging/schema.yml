@@ -1,0 +1,69 @@
+
+version: 2
+
+sources:
+  - name: staging
+    database: "{{ env_var('DBT_DATABASE', 'taxi-rides-ny-450705') }}"
+    schema: "{{ env_var('DBT_SCHEMA', 'la_traffic_collision') }}"
+    # loaded_at_field: record_loaded_at
+    tables:
+      - name: traffic_collisions
+
+models:
+    - name: traffic_collisions
+      description: >
+        Dataset of traffic collisions in Los Angeles. Includes detailed information on traffic incidents, including dates, locations, crime codes, and victim details.
+      columns:
+          - name: number
+            description: Unique identifier for the traffic incident.
+            tests:
+                - unique:
+                    severity: warn
+                - not_null:
+                    severity: warn
+          - name: date_reported
+            description: The date and time when the incident was officially reported.
+          - name: date_occurred
+            description: The date and time when the incident actually occurred.
+          - name: time_occurred
+            description: The time of day when the incident occurred, in a 24-hour format (integer).
+          - name: area_id
+            description: Numeric identifier for the area where the incident occurred.
+          - name: area_name
+            description: The name of the area where the incident occurred (e.g., neighborhood).
+          - name: reporting_district
+            description: A numeric identifier for the district where the incident was reported.
+          - name: crime_code
+            description: Numeric code indicating the type of crime involved in the incident.
+          - name: crime_code_description
+            description: Description of the crime code (e.g., "Burglary", "Theft").
+          - name: mo_codes
+            description: Codes representing the modus operandi (method) used in the crime.
+          - name: victim_age
+            description: The age of the victim involved in the incident (float, can be null).
+          - name: victim_sex
+            description: The gender of the victim (e.g., M = Male, F = Female).
+          - name: victim_descent
+            description: The descent/ethnicity of the victim (e.g., W = White, B = Black).
+          - name: premise_code
+            description: Numeric code for the location type where the incident occurred (e.g., street, parking lot).
+          - name: premise_description
+            description: Human-readable description of the premise code (e.g., "Street", "Residence").
+          - name: address
+            description: The address where the incident occurred (if available).
+          - name: cross_street
+            description: The nearby intersection where the incident occurred.
+          - name: location
+            description: Geolocation coordinates of the incident (latitude, longitude).
+          - name: zip_codes
+            description: ZIP code for the location where the incident occurred.
+          - name: census_tracts
+            description: Census tract number for the area where the incident occurred.
+          - name: precinct_boundaries
+            description: Numeric code representing the precinct boundary of the incident's location.
+          - name: la_specific_plans
+            description: Plan code specific to the Los Angeles area that the incident falls under.
+          - name: council_districts
+            description: District code for the city council district where the incident occurred.
+          - name: neighborhood_councils__certified_
+            description: Numeric code indicating the certified neighborhood council where the incident took place.
