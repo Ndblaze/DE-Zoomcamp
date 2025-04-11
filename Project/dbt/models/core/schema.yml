@@ -1,0 +1,81 @@
+
+version: 2
+
+models:
+  - name: fact_collision
+    description: >
+      Fact table of traffic collisions reported in Los Angeles.
+      Includes identifiers and foreign keys referencing lookup tables like area, district, premise, and victim demographics.
+    columns:
+      - name: collision_id
+        description: Surrogate key generated from dr_number and date_occurred.
+        tests:
+          - unique
+          - not_null
+
+      - name: date_occurred
+        description: Date and time the collision occurred.
+        tests:
+          - not_null
+
+      - name: date_reported
+        description: Date and time the collision was reported.
+
+      - name: time_occurred
+        description: Time the collision occurred.
+
+      - name: area_key
+        description: Foreign key referencing area_lookup table.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('area_lookup')
+              field: area_key
+
+      - name: reporting_district
+        description: Foreign key referencing district_lookup table.
+        tests:
+          - not_null
+
+      - name: premise_key
+        description: Foreign key referencing premise_lookup table.
+        tests:
+          - relationships:
+              to: ref('premise_lookup')
+              field: premise_key
+
+      - name: victim_sex
+        description: .....
+
+      - name: victim_descent
+        description: .....
+
+  - name: area_lookup
+    description: >
+      Lookup table for LAPD areas, identified by area_id and area_name.
+    columns:
+      - name: area_id
+        description: Unique area identifier.
+        tests:
+          - unique
+          - not_null
+
+      - name: area_name
+        description: Name of the LAPD area.
+        tests:
+          - not_null
+
+  - name: premise_lookup
+    description: >
+      Lookup table for premises where the incident occurred, combining premise code and description.
+    columns:
+      - name: premise_code
+        description: Unique premise code.
+        tests:
+          - unique
+          - not_null
+
+      - name: premise_description
+        description: Description of the type of premise.
+        tests:
+          - not_null
