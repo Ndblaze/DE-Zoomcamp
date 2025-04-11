@@ -24,25 +24,25 @@ models:
       - name: time_occurred
         description: Time the collision occurred.
 
-      - name: area_id
+      - name: area_key
         description: Foreign key referencing area_lookup table.
         tests:
           - not_null
           - relationships:
               to: ref('area_lookup')
-              field: area_id
+              field: area_key
 
       - name: reporting_district
         description: Foreign key referencing district_lookup table.
         tests:
           - not_null
 
-      - name: premise_code
+      - name: premise_key
         description: Foreign key referencing premise_lookup table.
         tests:
           - relationships:
               to: ref('premise_lookup')
-              field: premise_code
+              field: premise_key
 
       - name: victim_sex
         description: .....

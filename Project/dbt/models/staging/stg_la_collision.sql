@@ -19,7 +19,17 @@ select
     -- timestamps
     cast(date_reported as timestamp) as date_reported,
     cast(date_occurred as timestamp) as date_occurred,
-    cast(lpad(cast(time_occurred as string), 4, '0') as time) as time_occurred, -- safer formatting
+    
+    case
+        when safe_cast(substr(lpad(cast(time_occurred as string), 4, '0'), 1, 2) as int64) between 0 and 23
+        and safe_cast(substr(lpad(cast(time_occurred as string), 4, '0'), 3, 2) as int64) between 0 and 59
+        then parse_time('%H:%M:%S',
+            substr(lpad(cast(time_occurred as string), 4, '0'), 1, 2) || ':' ||
+            substr(lpad(cast(time_occurred as string), 4, '0'), 3, 2) || ':00'
+        )
+        else null
+    end as time_occurred,
+
 
     -- categorical lookup references
     {{ dbt_utils.generate_surrogate_key(['area_id', 'area_name']) }} as area_key,
