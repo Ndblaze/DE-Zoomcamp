@@ -2,19 +2,80 @@
 version: 2
 
 models:
-  - name: dim_zones
+  - name: fact_collision
     description: >
-      List of unique zones idefied by locationid. 
-      Includes the service zone they correspond to (Green or yellow).
-
-  - name: dm_monthly_zone_revenue
-    description: >
-      Aggregated table of all taxi trips corresponding to both service zones (Green and yellow) per pickup zone, month and service.
-      The table contains monthly sums of the fare elements used to calculate the monthly revenue. 
-      The table contains also monthly indicators like number of trips, and average trip distance. 
+      Fact table of traffic collisions reported in Los Angeles.
+      Includes identifiers and foreign keys referencing lookup tables like area, district, premise, and victim demographics.
     columns:
-      - name: revenue_monthly_total_amount
-        description: Monthly sum of the the total_amount of the fare charged for the trip per pickup zone, month and service.
+      - name: collision_id
+        description: Surrogate key generated from dr_number and date_occurred.
         tests:
-            - not_null:
-                severity: error
+          - unique
+          - not_null
+
+      - name: date_occurred
+        description: Date and time the collision occurred.
+        tests:
+          - not_null
+
+      - name: date_reported
+        description: Date and time the collision was reported.
+
+      - name: time_occurred
+        description: Time the collision occurred.
+
+      - name: area_id
+        description: Foreign key referencing area_lookup table.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('area_lookup')
+              field: area_id
+
+      - name: reporting_district
+        description: Foreign key referencing district_lookup table.
+        tests:
+          - not_null
+
+      - name: premise_code
+        description: Foreign key referencing premise_lookup table.
+        tests:
+          - relationships:
+              to: ref('premise_lookup')
+              field: premise_code
+
+      - name: victim_sex
+        description: .....
+
+      - name: victim_descent
+        description: .....
+
+  - name: area_lookup
+    description: >
+      Lookup table for LAPD areas, identified by area_id and area_name.
+    columns:
+      - name: area_id
+        description: Unique area identifier.
+        tests:
+          - unique
+          - not_null
+
+      - name: area_name
+        description: Name of the LAPD area.
+        tests:
+          - not_null
+
+  - name: premise_lookup
+    description: >
+      Lookup table for premises where the incident occurred, combining premise code and description.
+    columns:
+      - name: premise_code
+        description: Unique premise code.
+        tests:
+          - unique
+          - not_null
+
+      - name: premise_description
+        description: Description of the type of premise.
+        tests:
+          - not_null
