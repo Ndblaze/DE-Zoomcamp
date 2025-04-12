@@ -1,4 +1,4 @@
-
+ 
 {{
     config(
         materialized='view'
@@ -72,7 +72,7 @@ select
 from traffic_collisions
 where rn = 1
 
--- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'
+-- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'   this is what you use when you want to run everything
 {% if var('is_test_run', default=true) %}
   limit 100
 {% endif %}
