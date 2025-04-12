@@ -1,81 +1,111 @@
-
 version: 2
 
 models:
-  - name: fact_collision
+  - name: stg_la_collision
     description: >
-      Fact table of traffic collisions reported in Los Angeles.
-      Includes identifiers and foreign keys referencing lookup tables like area, district, premise, and victim demographics.
+      Cleaned and enhanced staging view of LA traffic collisions.
+      Includes time parsing, surrogate keys for foreign references, and extracted geolocation data.
     columns:
+      # Identifiers
       - name: collision_id
-        description: Surrogate key generated from dr_number and date_occurred.
+        description: Surrogate key created from dr_number and date_occurred.
         tests:
           - unique
           - not_null
 
+      # Timestamps
+      - name: date_reported
+        description: Timestamp when the collision was reported.
+
       - name: date_occurred
-        description: Date and time the collision occurred.
+        description: Timestamp when the collision occurred.
         tests:
           - not_null
-
-      - name: date_reported
-        description: Date and time the collision was reported.
 
       - name: time_occurred
-        description: Time the collision occurred.
+        description: Parsed time of day the collision occurred (nullable if format is invalid).
 
+      # Foreign key surrogate keys
       - name: area_key
-        description: Foreign key referencing area_lookup table.
+        description: Surrogate key based on area_id and area_name.
         tests:
           - not_null
-          - relationships:
-              to: ref('area_lookup')
-              field: area_key
 
-      - name: reporting_district
-        description: Foreign key referencing district_lookup table.
+      - name: crime_key
+        description: Surrogate key based on crime_code and crime_code_description.
         tests:
           - not_null
 
       - name: premise_key
-        description: Foreign key referencing premise_lookup table.
-        tests:
-          - relationships:
-              to: ref('premise_lookup')
-              field: premise_key
+        description: Surrogate key based on premise_code and premise_description.
 
-      - name: victim_sex
-        description: .....
+      # Location data
+      - name: latitude
+        description: Extracted latitude from the location JSON field.
 
-      - name: victim_descent
-        description: .....
+      - name: longitude
+        description: Extracted longitude from the location JSON field.
 
-  - name: area_lookup
-    description: >
-      Lookup table for LAPD areas, identified by area_id and area_name.
-    columns:
+      - name: location_point
+        description: Geography point created using longitude and latitude.
+
+      # Category fields
       - name: area_id
-        description: Unique area identifier.
+        description: Original LAPD area ID.
         tests:
-          - unique
           - not_null
 
       - name: area_name
         description: Name of the LAPD area.
-        tests:
-          - not_null
 
-  - name: premise_lookup
-    description: >
-      Lookup table for premises where the incident occurred, combining premise code and description.
-    columns:
+      - name: crime_code
+        description: Crime classification code.
+
+      - name: crime_code_description
+        description: Description of the crime code.
+
       - name: premise_code
-        description: Unique premise code.
-        tests:
-          - unique
-          - not_null
+        description: Code describing the premise of the incident.
 
       - name: premise_description
         description: Description of the type of premise.
-        tests:
-          - not_null
+
+      # Victim attributes
+      - name: victim_age
+        description: Age of the victim (nullable).
+
+      - name: victim_sex
+        description: Sex of the victim (e.g., M, F, X).
+
+      - name: victim_descent
+        description: Ethnic descent of the victim.
+
+      # Addresses
+      - name: address
+        description: Block-level address of the incident.
+
+      - name: cross_street
+        description: Nearest cross street (nullable).
+
+      # District info
+      - name: reporting_district
+        description: LAPD reporting district.
+
+      # Geographic metadata
+      - name: zip_codes
+        description: Zip code(s) associated with the location.
+
+      - name: census_tracts
+        description: Census tract for the location.
+
+      - name: precinct_boundaries
+        description: Numeric code representing precinct boundaries.
+
+      - name: la_specific_plans
+        description: Numeric indicator of specific plans within the city.
+
+      - name: council_districts
+        description: Council district the incident falls under.
+
+      - name: neighborhood_councils__certified_
+        description: Certified neighborhood council for the location.
