@@ -50,11 +50,11 @@ select
 
     -- other fields
     mo_codes,
-    area_id,
+    cast(area_id as int) as area_id,
     area_name,
-    crime_code,
+    cast(crime_code as int) as crime_code,
     crime_code_description,
-    premise_code,
+    cast(premise_code as int) as premise_code,
     premise_description,
     victim_age,
     victim_sex,
