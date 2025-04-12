@@ -36,6 +36,18 @@ select
     {{ dbt_utils.generate_surrogate_key(['crime_code', 'crime_code_description']) }} as crime_key,
     {{ dbt_utils.generate_surrogate_key(['premise_code', 'premise_description']) }} as premise_key,
 
+    --locations json parse
+    -- cast to string first in case it’s a struct, then extract as scalar
+    safe_cast(JSON_EXTRACT_SCALAR(cast(location as string), '$.latitude') as float64) as latitude,
+    safe_cast(JSON_EXTRACT_SCALAR(cast(location as string), '$.longitude') as float64) as longitude,
+
+    -- creating location_point
+    st_geogpoint(
+    safe_cast(JSON_EXTRACT_SCALAR(cast(location as string), '$.longitude') as float64),
+    safe_cast(JSON_EXTRACT_SCALAR(cast(location as string), '$.latitude') as float64)
+    ) as location_point,
+
+
     -- other fields
     mo_codes,
     area_id,
@@ -49,7 +61,6 @@ select
     victim_descent,
     address,
     cross_street,
-    location,
     reporting_district,
     cast(zip_codes as numeric) as zip_codes,
     cast(census_tracts as numeric) as census_tracts,
