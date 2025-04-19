@@ -66,7 +66,8 @@ This project demonstrates a robust data pipeline designed for real-time analytic
 
 ## 🗺️ Project Architecture
 
-<img width="1512" alt="Dashboard" src="https://github.com/user-attachments/assets/bb4d1a6a-1b97-452a-b728-4afcd19aa869" />
+![pipeline architecture](https://github.com/user-attachments/assets/a82a135d-6529-4cde-b932-333d5a00d8ac)
+
 
 ```
 
