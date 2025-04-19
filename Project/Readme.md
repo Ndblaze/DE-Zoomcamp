@@ -1,9 +1,5 @@
 
 
-Absolutely! Here's a comprehensive **README.md** you can include in your project repository to document your entire pipeline from source to visualization.
-
----
-
 # 🚦 Los Angeles Traffic Collision Data Pipeline & Dashboard
 
 A modern end-to-end data engineering pipeline project that ingests real-world traffic collision data from Kaggle, processes it through a cloud-based data stack, and delivers insights via an interactive dashboard in Looker Studio.
@@ -18,7 +14,9 @@ This project demonstrates a robust data pipeline designed for real-time analytic
 
 ## 🗺️ Project Architecture
 
-```
+```![pipeline architecture](https://github.com/user-attachments/assets/a3648bf9-efca-467f-9f00-244908ede703)
+<img width="1512" alt="Dashboard" src="https://github.com/user-attachments/assets/895d0fb0-70ea-488b-ab35-d273d48e0bfe" />
+
         +-------------+       +-------------+
         |   Kaggle    | <---> |   Python    |  
         +-------------+       +-------------+
@@ -85,6 +83,9 @@ The Looker Studio dashboard includes:
 - 📍 Point data extracted from WKT (e.g., `POINT(-118.2371 34.0581)`) into `Latitude`, `Longitude`
 - ⏰ Trends over time
 - 🏙️ Breakdown by location, street, and severity
+
+![pipeline architecture](https://github.com/user-attachments/assets/12173452-fcea-4fec-8cac-60e2ba96acda)
+<img width="1512" alt="Dashboard" src="https://github.com/user-attachments/assets/84b0e12c-69c4-4184-a3f0-4e28a3e58cb6" />
 
 ---
 
@@ -161,6 +162,4 @@ dbt run
 - Data Source: [Kaggle - Los Angeles Traffic Collision Dataset](https://www.kaggle.com/)
 - Inspiration: DataTalksClub Data Engineering Zoomcamp
 
----
 
-Let me know if you'd like me to convert this to a real `.md` file or tweak it for GitHub Pages!
