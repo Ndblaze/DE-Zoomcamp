@@ -10,6 +10,22 @@ This project demonstrates a robust data pipeline designed for real-time analytic
 
 ---
 
+## ❗ Problem Statement
+
+Los Angeles is a city with high volumes of traffic and, as a result, a significant number of traffic collisions. While the city provides access to raw collision data, it is often complex, semi-structured, and difficult to analyze in its raw form. Analysts, urban planners, and public safety officials need a clean, reliable, and queryable data pipeline to uncover patterns, monitor high-risk zones, and support data-driven decision making.
+
+This project addresses the challenge by building a modern data pipeline to:
+
+- Extract raw traffic collision data from the Los Angeles open data portal
+- Clean, standardize, and transform the data using best practices
+- Load it into Google BigQuery in an analytics-ready format
+- Visualize the insights using Looker Studio with geospatial and time-based breakdowns
+
+The goal is to make traffic collision data accessible, trustworthy, and actionable—empowering stakeholders to reduce accidents and improve public safety through data.
+
+
+---
+
 ## 🧱 Tech Stack
 
 - **Google Cloud Platform (GCP)**  
